@@ -15,7 +15,7 @@ import { CarsRoutingModule } from './cars-routing.module';
   ],
   imports: [
     CommonModule,
-    CarsRoutingModule
+    CarsRoutingModule,
   ]
 })
 export class CarsModule { }

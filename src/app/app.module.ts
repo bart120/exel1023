@@ -6,7 +6,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MenubarModule } from 'primeng/menubar';
 import { AppRoutingModule } from './app-routing.module';
 import { CarsModule } from './pages/cars/cars.module';
-
+import { MasterModule } from './pages/master/master.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,8 +17,10 @@ import { CarsModule } from './pages/cars/cars.module';
   ],
   imports: [
     BrowserModule,
+    MasterModule,
     MenubarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
