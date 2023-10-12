@@ -15,6 +15,7 @@ export class AppComponent {
       {
         label: 'Home',
         icon: 'pi pi-fw pi-file',
+        routerLink: '/home'
 
       },
       {
@@ -23,18 +24,20 @@ export class AppComponent {
         items: [
           {
             label: 'Ajouter',
-            icon: 'pi pi-fw pi-align-left'
+            icon: 'pi pi-fw pi-align-left',
+            routerLink: '/cars/add'
           },
           {
             label: 'Lister',
-            icon: 'pi pi-fw pi-align-right'
+            icon: 'pi pi-fw pi-align-right',
+            routerLink: '/cars/'
           }
         ]
       },
       {
         label: 'Connexion',
         icon: 'pi pi-fw pi-file',
-
+        routerLink: '/auth/login'
       },
     ];
   }
