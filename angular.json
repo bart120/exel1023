@@ -11,6 +11,7 @@
         }
       },
       "root": "",
+      //"baseHref":"/toto"
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -30,6 +31,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "65185d9e-d0d3-4c96-b2ba-05a7a5956005"
   }
 }
