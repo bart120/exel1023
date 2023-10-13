@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -8,7 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { CarsModule } from './pages/cars/cars.module';
 import { MasterModule } from './pages/master/master.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AuthenticationModule } from './pages/authentication/authentication.module';
+import '@angular/common/locales/global/fr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UIModule } from './shared/ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MasterModule,
     MenubarModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthenticationModule,
+    UIModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

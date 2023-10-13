@@ -1,1 +1,20 @@
-<p>cars-add works!</p>
+<h1>Ajouter une voiture</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="formCar">
+    <div class="flex flex-column gap-2">
+        <label for="model">Model</label>
+        <input pInputText id="model" formControlName="model" />
+    </div>
+    <div class="flex flex-column gap-2">
+        <label for="price">Prix</label>
+        <input pInputText id="price" formControlName="price" />
+    </div>
+    <div class="flex flex-column gap-2">
+        <label for="dateCirc">Date mise en service</label>
+        <p-calendar [showIcon]="true" id="dateCirc"></p-calendar>
+    </div>
+    <div class="flex flex-column gap-2">
+        <label for="brand">Marque</label>
+        <p-dropdown [options]="brands" optionLabel="name" optionValue="id"></p-dropdown>
+    </div>
+    <div><p-button type="submit">Enregistrer</p-button></div>
+</form>

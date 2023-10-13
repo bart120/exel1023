@@ -1,1 +1,22 @@
-<p>cars-list works!</p>
+<div>
+    <p-table [value]="cars">
+        <ng-template pTemplate="header">
+            <tr>
+                <td>Model</td>
+                <td>Prix</td>
+                <td>Date</td>
+                <td>Marque</td>
+                <td></td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-car>
+            <tr>
+                <td>{{car.model}}</td>
+                <td>{{car.price | currency:'€'}}</td>
+                <td>{{car.dateOfCirculation | date:'short'}}</td>
+                <td><span *ngIf="car.brand$ | async as brand">{{$any(brand).name}}</span></td>
+                <td><a [routerLink]="['/cars/detail', car.id, car.model]">Détail</a></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

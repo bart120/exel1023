@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { AuthenticationService } from './services/authentication.service';
+import { UserModel } from './models/user.model';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +11,20 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
   title = 'exel1024';
   items: MenuItem[] | undefined;
+  user?: UserModel;
+
+  constructor(private authServ: AuthenticationService) {
+
+  }
+
+  logout() {
+    this.authServ.logout();
+  }
 
   ngOnInit() {
+    this.authServ.user$.subscribe(user => {
+      this.user = user;
+    });
     this.items = [
       {
         label: 'Home',
@@ -33,12 +47,7 @@ export class AppComponent {
             routerLink: '/cars/'
           }
         ]
-      },
-      {
-        label: 'Connexion',
-        icon: 'pi pi-fw pi-file',
-        routerLink: '/auth/login'
-      },
+      }
     ];
   }
 }

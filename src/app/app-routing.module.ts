@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/master/home/home.component';
 import { NotFoundComponent } from './pages/master/not-found/not-found.component';
 import { LoginComponent } from './pages/authentication/login/login.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
       { path: '', component: CarsListComponent }
     ]
   },*/
-  { path: 'cars', loadChildren: () => import('./pages/cars/cars.module').then(x => x.CarsModule) },
+  { path: 'cars', loadChildren: () => import('./pages/cars/cars.module').then(x => x.CarsModule), canActivate: [AuthenticationGuard] },
 
 
   { path: 'auth/login', component: LoginComponent, title: 'routelogin' },

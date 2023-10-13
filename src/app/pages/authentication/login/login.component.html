@@ -1,1 +1,19 @@
-<p>login works!</p>
+<h1>Connexion</h1>
+
+<form>
+    <div class="flex flex-column gap-2">
+        <label htmlFor="username">Login</label>
+        <input pInputText id="username" #login (keyup.enter)="password.focus();login.value=''" />
+    </div>
+    <div class="flex flex-column gap-2">
+        <label htmlFor="password">Mot de passe</label>
+        <input pInputText type="password" id="password" #password />
+    </div>
+    <div>
+        <p-button type="button" (click)="onLogin($event, login.value)">Se connecter</p-button>
+    </div>
+</form>
+
+<div *ngIf="login.value != ''">
+    Bien joué!
+</div>

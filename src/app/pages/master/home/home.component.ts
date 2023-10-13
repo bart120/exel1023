@@ -10,7 +10,7 @@ import { BrandsService } from 'src/app/services/brands.service';
   ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  sub: Subscription | null = null;
+  sub?: Subscription;
   brands: BrandModel[] = [];
   //private brandServ: BrandsService;
 

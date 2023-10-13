@@ -41,4 +41,8 @@ export class BrandsService {
 
   }
 
+  getBrandById(id: number): Observable<BrandModel> {
+    return this.http.get<BrandModel>(`${environment.urlBrands}/${id}`);
+  }
+
 }
